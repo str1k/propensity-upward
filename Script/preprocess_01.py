@@ -1,5 +1,6 @@
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import HiveContext, SparkSession
+from pyspark.sql import SQLContext, HiveContext
 import pyspark.sql.functions as func
 import pandas as pd
 import numpy as np
