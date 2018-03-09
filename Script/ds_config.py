@@ -20,4 +20,6 @@ preprocess_03_output_01 = '/preprocessed_cvm/ARPUTraining_' + date_stamp
 
 preprocess_04_output_01 = '/preprocessed_cvm/ARPUPresent_'+ date_stamp
 
-preprocess_04_output_01 = '/preprocessed_cvm/Selected_Feature_Prediction_'+ date_stamp
+preprocess_05_output_01 = '/preprocessed_cvm/Selected_Feature_Prediction_'+ date_stamp
+
+preprocess_06_output_01 = '/preprocessed_cvm/Selected_Feature_Training_' + date_stamp
