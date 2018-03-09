@@ -18,7 +18,6 @@ if __name__ == "__main__":
     conf = SparkConf().setAppName("preprocess_01")
     sc = SparkContext(conf=conf)
     sqlContext = SQLContext(sc)
-	hiveContext = HiveContext(sc)
     df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", ds_config.cvm_non_voice_arpu_delimiter).load(ds_config.cvm_non_voice_arpu_source)
     df.registerTempTable("rawTable")
     missing_df = spark.sql("SELECT mobile_segment,distinct_out_number_m1,distinct_out_number_m2,distinct_out_number_m3,distinct_out_number_m4,distinct_out_number_m5,distinct_out_number_m6 from rawTable")
