@@ -70,7 +70,7 @@ if __name__ == "__main__":
 	joinedtarifm3m6 = joinedtarifm3m6.drop("data_speed_mb_m6")
 	joinedtarifm3m6 = joinedtarifm3m6.drop("data_quota_minute_m3")
 	joinedtarifm3m6 = joinedtarifm3m6.drop("data_quota_minute_m6")
-	ais_call_inpack_hours_m3 = spark.sql("SELECT analytic_id, ais_call_inpack_hours_m3 from joinedtarifm3")
+	ais_call_inpack_hours_m3 = sqlContext.sql("SELECT analytic_id, ais_call_inpack_hours_m3 from joinedtarifm3")
 	means = ais_call_inpack_hours_m3.agg( *[func.mean(c).alias(c) for c in ais_call_inpack_hours_m3.columns if c != 'analytic_id']).toPandas().to_dict('records')[0]
 	means['bundle_handset_yn_m3'] = 'NA'
 	means['onnet_offnet_yn_m3'] = 'NA'
