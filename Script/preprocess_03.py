@@ -33,4 +33,4 @@ if __name__ == "__main__":
 	means['service_month'] = 12
 	training_df_eliminateGSna = training_df.fillna(means)
 	training_df_eliminateGSna.registerTempTable("training_df_eliminateGSna")
-	training_df_eliminateGSna.repartition(1).write.option("sep","|").option("header","true").csv()
+	training_df_eliminateGSna.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_03_output_01)

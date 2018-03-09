@@ -18,7 +18,7 @@ if __name__ == "__main__":
 	from pyspark.sql.types import IntegerType
 	from pyspark.sql.types import DoubleType
 	from pyspark.sql.functions import when
-	from pyspark.sql.functions import regexp_replace
+	from pyspark.sql.functions import regexp_replace,abs
 	df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_01_output_01)
 	tarif = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.master_tarif)
 	#drop column
