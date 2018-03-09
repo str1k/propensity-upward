@@ -19,3 +19,5 @@ preprocess_02_output_02 = '/preprocessed_cvm/joinedtarifm3m6_'+ date_stamp
 preprocess_03_output_01 = '/preprocessed_cvm/ARPUTraining_' + date_stamp
 
 preprocess_04_output_01 = '/preprocessed_cvm/ARPUPresent_'+ date_stamp
+
+preprocess_04_output_01 = '/preprocessed_cvm/Selected_Feature_Prediction_'+ date_stamp

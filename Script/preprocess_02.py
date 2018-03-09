@@ -48,6 +48,15 @@ if __name__ == "__main__":
                                       "promotion_type as promotion_type_m3")
 	joinedtarifm3 = df.join(parsedtarifM3, ["main_package_id_m3"], "left_outer")
 	joinedtarifm3.registerTempTable("joinedtarifm3")
+	parsedtarifM6 = parsedtarif.selectExpr("promotion_id as main_package_id_m6","promotion_price_discount as promotion_price_discount_m6", "bundle_handset_yn as bundle_handset_yn_m6",\
+                                      "onnet_offnet_yn as onnet_offnet_yn_m6", "bundle_service_yn as bundle_service_yn_m6", "voice_yn as voice_yn_m6",\
+                                      "data_yn as data_yn_m6", "sms_yn as sms_yn_m6", "mms_yn as mms_yn_m6", "awifi_yn as awifi_yn_m6", "swifi_yn as swifi_yn_m6",\
+                                      "other_app_yn as other_app_yn_m6", "voice_charging_type as voice_charging_type_m6", "voice_first_minute_rate as voice_first_minute_rate_m6",\
+                                      "voice_other_minute_rate as voice_other_minute_rate_m6", "data_unlimited_yn as data_unlimited_yn_m6", "data_throttling_yn as data_throttling_yn_m6",\
+                                      "data_throttling_speed_kbps as data_throttling_speed_kbps_m6", "data_speed_mb as data_speed_mb_m6","data_network as data_network_m6",\
+                                      "charge_by_second_yn as charge_by_second_yn_m6", "voice_quota_minute as voice_quota_minute_m6", "data_quota_volume_mb as data_quota_volume_mb_m6",\
+                                      "data_quota_minute as data_quota_minute_m6", "voice_pay_per_use as voice_pay_per_use_m6", "ais_call_inpack_hours as ais_call_inpack_hours_m6",
+                                      "promotion_type as promotion_type_m6")
 	joinedtarifm3m6 = joinedtarifm3.join(parsedtarifM6, ["main_package_id_m6"], "left_outer")
 	joinedtarifm3m6.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_02_output_02)
 	tmp = sqlContext.sql("SELECT promotion_price_discount_m3,bundle_handset_yn_m3,onnet_offnet_yn_m3,bundle_service_yn_m3 from joinedtarifm3")

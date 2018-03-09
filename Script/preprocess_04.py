@@ -33,4 +33,4 @@ if __name__ == "__main__":
 	means['service_month'] = 12
 	present_df_eliminateGSna = present_df.fillna(means)
 	present_df_eliminateGSna.registerTempTable("present_df_eliminateGSna")
-	present_df_eliminateGSna.repartition(1).write.option("sep","|").option("header","true").csv()
+	present_df_eliminateGSna.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_04_output_01)
