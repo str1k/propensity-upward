@@ -7,3 +7,4 @@ master_tarif = '/data_cvm/NON_VOICE/master_package_tariff_20180305.txt'
 
 preprocess_01_output_01 = '/preprocessed_cvm/mainset_elim_null_' + date_stamp
 preprocess_02_output_01 ='/preprocessed_cvm/processed_ARPU_Tarif_'+ datestamp
+preprocess_02_output_02 = '/preprocessed_cvm/joinedtarifm3m6_'+ datestamp

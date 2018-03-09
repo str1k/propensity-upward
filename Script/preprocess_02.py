@@ -48,7 +48,7 @@ if __name__ == "__main__":
 	joinedtarifm3 = df.join(parsedtarifM3, ["main_package_id_m3"], "left_outer")
 	joinedtarifm3.registerTempTable("joinedtarifm3")
 	joinedtarifm3m6 = joinedtarifm3.join(parsedtarifM6, ["main_package_id_m6"], "left_outer")
-	joinedtarifm3m6.repartition(1).write.option("sep","|").option("header","true").csv("/preprocessed_cvm/joinedtarifm3m6_"+ datestamp)
+	joinedtarifm3m6.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_02_output_02)
 	tmp = sqlContext.sql("SELECT promotion_price_discount_m3,bundle_handset_yn_m3,onnet_offnet_yn_m3,bundle_service_yn_m3 from joinedtarifm3")
 	#tmp.agg(*[ (1 - (func.count(c) / func.count('*'))).alias(c) for c in tmp.columns]).show()
 	joinedtarifm3m6.select("promotion_price_discount_m3").show()
