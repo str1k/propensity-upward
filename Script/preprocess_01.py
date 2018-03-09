@@ -20,10 +20,10 @@ if __name__ == "__main__":
     sqlContext = SQLContext(sc)
     df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", ds_config.cvm_non_voice_arpu_delimiter).load(ds_config.cvm_non_voice_arpu_source)
     df.registerTempTable("rawTable")
-    missing_df = sc.sql("SELECT mobile_segment,distinct_out_number_m1,distinct_out_number_m2,distinct_out_number_m3,distinct_out_number_m4,distinct_out_number_m5,distinct_out_number_m6 from rawTable")
+    missing_df = sqlContext.sql("SELECT mobile_segment,distinct_out_number_m1,distinct_out_number_m2,distinct_out_number_m3,distinct_out_number_m4,distinct_out_number_m5,distinct_out_number_m6 from rawTable")
 
-    hs_price3 = sc.sql("SELECT analytic_id, hs_release_price_baht_m3 from rawTable")
-    hs_price6 = sc.sql("SELECT analytic_id, hs_release_price_baht_m6 from rawTable")
+    hs_price3 = sqlContext.sql("SELECT analytic_id, hs_release_price_baht_m3 from rawTable")
+    hs_price6 = sqlContext.sql("SELECT analytic_id, hs_release_price_baht_m6 from rawTable")
 
     means = hs_price3.agg( *[func.mean(c).alias(c) for c in hs_price3.columns if c != 'analytic_id']).toPandas().to_dict('records')[0]
     means2 = hs_price6.agg( *[func.mean(c).alias(c) for c in hs_price6.columns if c != 'analytic_id']).toPandas().to_dict('records')[0]
