@@ -74,11 +74,11 @@ if __name__ == "__main__":
 		t_end = time.time()
 		print("Preprocess tasks complete in "+ str(t_end - t_start) + " seconds")
 	elif sys.argv[1] == 'train':
-		child = ssh_command ('strikermx', 'dtdsjust.southeastasia.cloudapp.azure.com', 'ni1909900377702,', 'python /home/strikermx/propensity-upward/Script/downloadBlob.py ' + ds_config.preprocess_08_output_02 + ' '+ ds_config.date_stamp )
+		child = ssh_command ('strikermx', 'dtdsjust.southeastasia.cloudapp.azure.com', 'ni1909900377702,', '/anaconda/envs/py35/bin/python /home/strikermx/propensity-upward/Script/downloadBlob.py ' + ds_config.preprocess_08_output_02 + ' '+ ds_config.date_stamp )
 		child.expect(pexpect.EOF)
 		output = child.before
 		print(output)
-		child = ssh_command ('strikermx', 'dtdsjust.southeastasia.cloudapp.azure.com', 'ni1909900377702,', 'python /home/strikermx/propensity-upward/Script/train_decisionTree.py ' + ds_config.date_stamp)
+		child = ssh_command ('strikermx', 'dtdsjust.southeastasia.cloudapp.azure.com', 'ni1909900377702,', '/anaconda/envs/py35/bin/python /home/strikermx/propensity-upward/Script/train_decisionTree.py ' + ds_config.date_stamp)
 		child.expect(pexpect.EOF)
 		output = child.before
 		print(output)
