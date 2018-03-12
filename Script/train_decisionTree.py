@@ -48,7 +48,7 @@ clf_gini = DecisionTreeClassifier(criterion = "gini", max_leaf_nodes = 100, max_
 clf_gini.fit(X, Y)
 
 #save model to file
-joblib.dump(clf_gini, filename)
+joblib.dump(clf_gini, output_dir + '/dt_' + sys.argv[1] +'.pkl')
 
 #make fitted prediction
 y_pred = clf_gini.predict(X)
