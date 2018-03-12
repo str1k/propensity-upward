@@ -1,7 +1,7 @@
 from azure.storage.blob import BlockBlobService
 import sys
 import os
-data_dir = '/home/strikermx/data_dir' + sys.argv[2]
+data_dir = '/home/strikermx/data_dir/' + sys.argv[2]
 block_blob_service = BlockBlobService(account_name='natds201801cvmarpu', account_key='melH7xjBqGc0yCtz4eL+v8rfR+Lx/cbTqlZ7Jz+adMNpTEIDdAU0L0nd2yUaMkimqU0gM0XixAwk8CRhuKoduw==')
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
