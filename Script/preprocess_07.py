@@ -186,5 +186,5 @@ if __name__ == "__main__":
 	maindf = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_04_output_01)
 
 	consoDF = maindf.join(parsedDF, ["analytic_id"], "left_outer")
-	consoDF.repartition(1).write.option("sep","|").option("header","true").csv(arpu_cluster + preprocess_07_output_02)
-	consoDF.repartition(1).write.option("sep","|").option("header","true").csv(devprod02_cluster + preprocess_07_output_02)
+	consoDF.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.arpu_cluster + preprocess_07_output_02)
+	consoDF.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.devprod02_cluster + preprocess_07_output_02)
