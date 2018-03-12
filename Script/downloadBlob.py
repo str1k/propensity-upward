@@ -7,7 +7,7 @@ if not os.path.exists(data_dir):
     os.makedirs(data_dir)
 generator = block_blob_service.list_blobs('ds-cvm-hdi-arpu-upward-2018-01-12t03-00-38-195z')
 for blob in generator:
-    if sys.argv[1] +'/' + sys.argv[2] +'/part' in blob.name:
+    if sys.argv[1] +'/part' in blob.name:
         print(blob.name)
         block_blob_service.get_blob_to_path('ds-cvm-hdi-arpu-upward-2018-01-12t03-00-38-195z', blob.name ,'/home/strikermx/data_dir/model_'+sys.argv[2]+'/training_'+sys.argv[2]+'.dat')
 
