@@ -73,7 +73,7 @@ if __name__ == "__main__":
 		print("Preprocess 08 complete in "+ str(t_08end - t_08start) + " seconds")
 		t_end = time.time()
 		print("Preprocess tasks complete in "+ str(t_end - t_start) + " seconds")
-	else if ys.argv[1] == 'train':
+	elif ys.argv[1] == 'train':
 		child = ssh_command ('strikermx', 'dtdsjust.southeastasia.cloudapp.azure.com', 'ni1909900377702,', 'python /home/strikermx/propensity-upward/Script/downloadBlob.py ' + ds_config.preprocess_08_output_02 + ' '+ ds_config.date_stamp )
 		child = ssh_command ('strikermx', 'dtdsjust.southeastasia.cloudapp.azure.com', 'ni1909900377702,', 'python /home/strikermx/propensity-upward/Script/train_decisionTree.py ' + ds_config.date_stamp)
 
