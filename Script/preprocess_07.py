@@ -25,7 +25,7 @@ def onehotenc(t_df, column):
 
 if __name__ == "__main__":
 	logging.getLogger("py4j").setLevel(logging.ERROR)
-	conf = SparkConf().setAppName("preprocess_03")
+	conf = SparkConf().setAppName("preprocess_07")
 	sc = SparkContext(conf=conf)
 	sqlContext = SQLContext(sc)
 	df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_05_output_01)

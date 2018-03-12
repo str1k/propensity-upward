@@ -30,3 +30,7 @@ preprocess_06_output_01 = '/preprocessed_cvm/Selected_Feature_Training_' + date_
 preprocess_07_output_01 = '/preprocessed_cvm/Prediction_Dataset_' + date_stamp
 preprocess_07_output_02 =  '/Target_Conso_' + date_stamp
 
+preprocess_08_output_01 = '/preprocessed_cvm/Training_Dataset_' + date_stamp
+preprocess_08_output_02 = '/preprocessed_cvm/Sampling_Train_Dataset_' + date_stamp
+preprocess_08_output_03 = '/preprocessed_cvm/Sampling_Validate_Dataset_' + date_stamp
+preprocess_08_output_04 = '/preprocessed_cvm/Target_Fitted_' + date_stamp
