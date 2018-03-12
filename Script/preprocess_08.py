@@ -24,10 +24,10 @@ def onehotenc(t_df, column):
     return t_df
 
 if __name__ == "__main__":
-	logging.getLogger("py4j").setLevel(logging.ERROR)
-	conf = SparkConf().setAppName("preprocess_08")
-	sc = SparkContext(conf=conf)
-	sqlContext = SQLContext(sc)
+    logging.getLogger("py4j").setLevel(logging.ERROR)
+    conf = SparkConf().setAppName("preprocess_08")
+    sc = SparkContext(conf=conf)
+    sqlContext = SQLContext(sc)
     df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_06_output_01)
     df.registerTempTable("dftb")
     ma_age = sqlContext.sql("SELECT analytic_id, ma_age from dftb")
