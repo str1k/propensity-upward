@@ -18,7 +18,7 @@ if __name__ == "__main__":
 	conf = SparkConf().setAppName("preprocess_03")
 	sc = SparkContext(conf=conf)
 	sqlContext = SQLContext(sc)
-	df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", ).load(ds_config.preprocess_01_output_01)
+	df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_01_output_01)
 	gsdf = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", ds_config.gs_customer_prof_before_delim).load(ds_config.gs_customer_prof_before)
 	gsdf.registerTempTable("GS_SUMMARY")
 	selected = sqlContext.sql("SELECT analytic_id, foreigner_flag, mobile_region, service_month, urbanflag, billing_region from GS_SUMMARY")
