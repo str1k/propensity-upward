@@ -12,7 +12,7 @@ from sklearn.utils import resample
 import sys
 import os
 output_dir = '/home/strikermx/output_dir/model_'+sys.argv[1]
-data_dir = '/home/strikermx/data_dir'
+data_dir = '/home/strikermx/data_dir/model_'+sys.argv[1]
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 #
