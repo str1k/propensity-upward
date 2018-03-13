@@ -11,7 +11,7 @@ from sklearn.externals import joblib
 from sklearn.utils import resample
 import sys
 import os
-output_dir = '/home/strikermx/output_dir/model_'+sys.argv[1]
+output_dir = '/home/strikermx/output_dir/model_'+sys.argv[1] +'2'
 data_dir = '/home/strikermx/data_dir/model_'+sys.argv[1]
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
@@ -44,7 +44,7 @@ X = X.astype(np.float32)
 Y = Y.astype(np.int)
 
 #train model
-clf_gini = DecisionTreeClassifier(criterion = "gini", max_leaf_nodes = 100, max_depth = 28)
+clf_gini = DecisionTreeClassifier(criterion = "gini", max_leaf_nodes = 100, max_depth = 18)
 clf_gini.fit(X, Y)
 
 #save model to file
