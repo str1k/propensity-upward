@@ -44,7 +44,7 @@ X = X.astype(np.float32)
 Y = Y.astype(np.int)
 
 #train model
-clf_gini = DecisionTreeClassifier(criterion = "gini", max_leaf_nodes = 100, max_depth = 18)
+clf_gini = DecisionTreeClassifier(criterion = "gini", max_leaf_nodes = 100, max_depth = 28)
 clf_gini.fit(X, Y)
 
 #save model to file
