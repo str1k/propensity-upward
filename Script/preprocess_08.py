@@ -190,7 +190,7 @@ if __name__ == "__main__":
     parsedDF = onehotenc(parsedDF, "mobile_region_p")
     parsedDF = onehotenc(parsedDF, "billing_region_p")
     parsedDF.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_08_output_01)
-    validate, train = parsedDF.randomSplit([0.9, 0.2]) 
+    validate, train = parsedDF.randomSplit([0.7, 0.3]) 
     train.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_08_output_02)
     validate.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_08_output_03)
     maindf = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_03_output_01)
