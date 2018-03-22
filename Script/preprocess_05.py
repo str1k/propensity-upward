@@ -44,9 +44,9 @@ if __name__ == "__main__":
                   'total_gprs_ontop_package_rev_m3','total_main_rev_mth_m1','total_main_rev_mth_m2','total_main_rev_mth_m3',\
                   'total_ontop_rev_mth_m1','total_ontop_rev_mth_m2','total_ontop_rev_mth_m3','bill_discount_before',\
                   'bill_discount_after','mainpack_abnormal_flag','data_traffic_subs_mb_m1','mou_ic_total_m1','mou_og_intl_m1',\
-                  'mou_og_roaming_m1','mou_og_total_m1','num_of_days_data_used_m1','sms_og_total_m1','data_traffic_subs_mb_m2',\
-                  'mou_ic_total_m2','mou_og_intl_m2','mou_og_roaming_m2','mou_og_total_m2','num_of_days_data_used_m2','sms_og_total_m2',\
-                  'data_traffic_subs_mb_m3','mou_ic_total_m3','mou_og_intl_m3','mou_og_roaming_m3','mou_og_total_m3','num_of_days_data_used_m3',\
+                  'mou_og_total_m1','num_of_days_data_used_m1','sms_og_total_m1','data_traffic_subs_mb_m2',\
+                  'mou_ic_total_m2','mou_og_intl_m2','mou_og_total_m2','num_of_days_data_used_m2','sms_og_total_m2',\
+                  'data_traffic_subs_mb_m3','mou_ic_total_m3','mou_og_intl_m3','mou_og_total_m3','num_of_days_data_used_m3',\
                   'sms_og_total_m3','distinct_out_number_m1','distinct_out_number_m2','distinct_out_number_m3','promotion_price_discount_m3',\
                   'promotion_price_discount_m6','voice_charging_type_m3','voice_charging_type_m6','promotion_type_m3','promotion_type_m6',\
                   'most_region_usage_voice_m6','most_region_usage_data_m6','most_province_usage_voice_m6','most_province_usage_data_m6')

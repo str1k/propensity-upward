@@ -150,8 +150,8 @@ if __name__ == "__main__":
     parsedDF = sqlContext.sql("SELECT *,((mou_og_intl_p1+mou_og_intl_p2+mou_og_intl_p3)/3) as avg_mou_og_intl_p from parsedDF")
     parsedDF.registerTempTable("parsedDF") 
 
-    parsedDF = sqlContext.sql("SELECT *,((mou_og_roaming_p1+mou_og_roaming_p2+mou_og_roaming_p3)/3) as avg_mou_og_roaming_p from parsedDF")
-    parsedDF.registerTempTable("parsedDF") 
+    #parsedDF = sqlContext.sql("SELECT *,((mou_og_roaming_p1+mou_og_roaming_p2+mou_og_roaming_p3)/3) as avg_mou_og_roaming_p from parsedDF")
+    #parsedDF.registerTempTable("parsedDF") 
 
     parsedDF = sqlContext.sql("SELECT *,((mou_og_total_p1+mou_og_total_p2+mou_og_total_p3)/3) as avg_mou_og_total_p from parsedDF")
     parsedDF.registerTempTable("parsedDF") 

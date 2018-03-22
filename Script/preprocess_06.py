@@ -44,9 +44,9 @@ if __name__ == "__main__":
                   'total_gprs_ontop_package_rev_m6','total_main_rev_mth_m4','total_main_rev_mth_m5','total_main_rev_mth_m6',\
                   'total_ontop_rev_mth_m4','total_ontop_rev_mth_m5','total_ontop_rev_mth_m6','bill_discount_before',\
                   'bill_discount_after','data_traffic_subs_mb_m4','mou_ic_total_m4','mou_og_intl_m4',\
-                  'mou_og_roaming_m4','mou_og_total_m4','num_of_days_data_used_m4','sms_og_total_m4','data_traffic_subs_mb_m5',\
-                  'mou_ic_total_m5','mou_og_intl_m5','mou_og_roaming_m5','mou_og_total_m5','num_of_days_data_used_m5','sms_og_total_m5',\
-                  'data_traffic_subs_mb_m6','mou_ic_total_m6','mou_og_intl_m6','mou_og_roaming_m6','mou_og_total_m6','num_of_days_data_used_m6',\
+                  'mou_og_total_m4','num_of_days_data_used_m4','sms_og_total_m4','data_traffic_subs_mb_m5',\
+                  'mou_ic_total_m5','mou_og_intl_m5','mou_og_total_m5','num_of_days_data_used_m5','sms_og_total_m5',\
+                  'data_traffic_subs_mb_m6','mou_ic_total_m6','mou_og_intl_m6','mou_og_total_m6','num_of_days_data_used_m6',\
                   'sms_og_total_m6','distinct_out_number_m4','distinct_out_number_m5','distinct_out_number_m6','promotion_price_discount_m3',\
                   'promotion_price_discount_m6','voice_charging_type_m3','voice_charging_type_m6','promotion_type_m3','promotion_type_m6')
 	df.registerTempTable("training_df")
