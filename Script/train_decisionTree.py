@@ -123,7 +123,7 @@ nodedf = nodedf.replace({"feature": feature_dict})
 nodedf.to_csv(output_dir + '/node_feature_' + sys.argv[1] + '.csv', sep=',')
 
 #select decision node with mean_prob of more than 80% fitted mean score
-top80pn = new_df.loc[new_df['mean_prob'] >= 0.80]
+top80pn = new_df.loc[new_df['mean_prob'] >= 0.60]
 test = list(top80pn.leaf_node.values)
 topfit = fitted_prob.loc[fitted_prob['leaf_node'].isin(test)].groupby('leaf_node').head(1)
 topfitind = topfit.index.values.tolist()
