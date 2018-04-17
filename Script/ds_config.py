@@ -1,4 +1,4 @@
-date_stamp = 'lastone'
+date_stamp = 'downward_first'
 
 arpu_cluster = '/preprocessed_cvm'
 devprod02_cluster = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/NON_VOICE'
