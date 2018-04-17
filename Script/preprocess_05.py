@@ -14,8 +14,8 @@ from pyspark.sql.functions import when
 import ds_config
 import logging
 if __name__ == "__main__":
-logging.getLogger("py4j").setLevel(logging.ERROR)
-conf = SparkConf().setAppName("preprocess_05")
+    logging.getLogger("py4j").setLevel(logging.ERROR)
+    conf = SparkConf().setAppName("preprocess_05")
     sc = SparkContext(conf=conf)
     sqlContext = SQLContext(sc)
     df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_04_output_01)
