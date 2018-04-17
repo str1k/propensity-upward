@@ -16,10 +16,10 @@ import logging
 if __name__ == "__main__":
 logging.getLogger("py4j").setLevel(logging.ERROR)
 conf = SparkConf().setAppName("preprocess_05")
-      sc = SparkContext(conf=conf)
-      sqlContext = SQLContext(sc)
-      df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_04_output_01)
-      parsedDf = df.drop('sub_id','register_date','avg_arpu_before','percent_change','most_region_usage_voice_m1','most_region_usage_data_m1',\
+    sc = SparkContext(conf=conf)
+    sqlContext = SQLContext(sc)
+    df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_04_output_01)
+    parsedDf = df.drop('sub_id','register_date','avg_arpu_before','percent_change','most_region_usage_voice_m1','most_region_usage_data_m1',\
                   'most_region_usage_m1','most_province_usage_voice_m1','most_province_usage_data_m1','most_province_usage_m1',\
                   'most_region_usage_voice_m3','most_region_usage_data_m3','most_region_usage_m3','most_province_usage_voice_m3',\
                   'most_province_usage_data_m3','most_province_usage_m3','hs_brand_name_m1','hs_model_m1','hs_support_3g2100_flag_m1',\
@@ -50,12 +50,12 @@ conf = SparkConf().setAppName("preprocess_05")
                   'sms_og_total_m3','distinct_out_number_m1','distinct_out_number_m2','distinct_out_number_m3','promotion_price_discount_m3',\
                   'promotion_price_discount_m6','voice_charging_type_m3','voice_charging_type_m6','promotion_type_m3','promotion_type_m6',\
                   'most_region_usage_voice_m6','most_region_usage_data_m6','most_province_usage_voice_m6','most_province_usage_data_m6')
-      df.registerTempTable("present_df")
-      ontop_package_price_m4 = sqlContext.sql("SELECT analytic_id, ontop_package_price_m4 from present_df")
-      means = ontop_package_price_m4.agg( *[func.mean(c).alias(c) for c in ontop_package_price_m4.columns if c != 'analytic_id']).toPandas().to_dict('records')[0]
-      means['ontop_package_price_m4'] = 0
-      means['ontop_package_price_m5'] = 0
-      means['ontop_package_price_m6'] = 0
-      parsedDf = parsedDf.fillna(means)
-      parsedDf.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_05_output_01)
-      sc.stop()
+    df.registerTempTable("present_df")
+    ontop_package_price_m4 = sqlContext.sql("SELECT analytic_id, ontop_package_price_m4 from present_df")
+    means = ontop_package_price_m4.agg( *[func.mean(c).alias(c) for c in ontop_package_price_m4.columns if c != 'analytic_id']).toPandas().to_dict('records')[0]
+    means['ontop_package_price_m4'] = 0
+    means['ontop_package_price_m5'] = 0
+    means['ontop_package_price_m6'] = 0
+    parsedDf = parsedDf.fillna(means)
+    parsedDf.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_05_output_01)
+    sc.stop()
