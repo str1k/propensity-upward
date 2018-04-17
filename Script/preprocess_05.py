@@ -14,12 +14,12 @@ from pyspark.sql.functions import when
 import ds_config
 import logging
 if __name__ == "__main__":
-      logging.getLogger("py4j").setLevel(logging.ERROR)
-      conf = SparkConf().setAppName("preprocess_05")
+logging.getLogger("py4j").setLevel(logging.ERROR)
+conf = SparkConf().setAppName("preprocess_05")
       sc = SparkContext(conf=conf)
       sqlContext = SQLContext(sc)
       df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_04_output_01)
-	parsedDf = df.drop('sub_id','register_date','avg_arpu_before','percent_change','most_region_usage_voice_m1','most_region_usage_data_m1',\
+      parsedDf = df.drop('sub_id','register_date','avg_arpu_before','percent_change','most_region_usage_voice_m1','most_region_usage_data_m1',\
                   'most_region_usage_m1','most_province_usage_voice_m1','most_province_usage_data_m1','most_province_usage_m1',\
                   'most_region_usage_voice_m3','most_region_usage_data_m3','most_region_usage_m3','most_province_usage_voice_m3',\
                   'most_province_usage_data_m3','most_province_usage_m3','hs_brand_name_m1','hs_model_m1','hs_support_3g2100_flag_m1',\
