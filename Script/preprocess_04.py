@@ -34,3 +34,4 @@ if __name__ == "__main__":
 	present_df_eliminateGSna = present_df.fillna(means)
 	present_df_eliminateGSna.registerTempTable("present_df_eliminateGSna")
 	present_df_eliminateGSna.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_04_output_01)
+	sc.stop()

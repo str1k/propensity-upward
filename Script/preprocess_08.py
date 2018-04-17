@@ -196,4 +196,4 @@ if __name__ == "__main__":
     maindf = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", '|').load(ds_config.preprocess_03_output_01)
     fittedDF = parsedDF.join(maindf, ["analytic_id"], "inner")
     fittedDF.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_08_output_04)
-    
+    sc.stop()

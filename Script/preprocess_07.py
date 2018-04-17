@@ -188,3 +188,4 @@ if __name__ == "__main__":
 	consoDF = maindf.join(parsedDF, ["analytic_id"], "left_outer")
 	consoDF.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.arpu_cluster + ds_config.preprocess_07_output_02)
 	consoDF.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.devprod02_cluster + ds_config.preprocess_07_output_02)
+	sc.stop()

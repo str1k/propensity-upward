@@ -118,3 +118,4 @@ if __name__ == "__main__":
 	joinedtarifm3m6_elimNA.registerTempTable("joinedtarifm3elimNA")
 
 	joinedtarifm3m6_elimNA.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_02_output_01)
+	sc.stop()

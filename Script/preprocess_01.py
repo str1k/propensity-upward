@@ -39,3 +39,4 @@ if __name__ == "__main__":
     no_NA_df = df.fillna(means)
     no_NA_df.registerTempTable("noNATable")
     no_NA_df.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_01_output_01)
+    sc.stop()

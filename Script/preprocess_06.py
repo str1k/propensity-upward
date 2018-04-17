@@ -57,3 +57,4 @@ if __name__ == "__main__":
 	means['ontop_package_price_m3'] = 0
 	parsedDf = parsedDf.fillna(means)
 	parsedDf.repartition(1).write.option("sep","|").option("header","true").csv(ds_config.preprocess_06_output_01)
+      sc.stop()
