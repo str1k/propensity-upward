@@ -19,7 +19,7 @@ if __name__ == "__main__":
     sc = SparkContext(conf=conf)
     sqlContext = SQLContext(sc)
     df_ori = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", ds_config.cvm_non_voice_arpu_delimiter).load(ds_config.cvm_non_voice_arpu_source)
-    df_ext = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", ds_config.cvm_non_voice_arpu_source_extend ).load(ds_config.cvm_non_voice_arpu_source)
+    df_ext = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").option("delimiter", ds_config.cvm_non_voice_arpu_delimiter).load(ds_config.cvm_non_voice_arpu_source_extend)
     df = df_ori.join(df_ext, ["analytic_id"], "left_outer")
     df.registerTempTable("rawTable")
     missing_df = sqlContext.sql("SELECT mobile_segment,distinct_out_number_m1,distinct_out_number_m2,distinct_out_number_m3,distinct_out_number_m4,distinct_out_number_m5,distinct_out_number_m6 from rawTable")
