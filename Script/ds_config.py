@@ -10,7 +10,7 @@ cvm_non_voice_arpu_source_extend = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08
 
 master_tarif = '/data_cvm/NON_VOICE/master_package_tariff_20180305.txt'
 
-gs_customer_prof_before = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/POSTPAID/GS_SUMMARY_CUSTOMER_PROF_201710.dat'
+gs_customer_prof_before = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/POSTPAID/GS_SUMMARY_CUSTOMER_PROF_201712.dat'
 gs_customer_prof_before_delim = '|'
 
 gs_customer_prof_after = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/POSTPAID/GS_SUMMARY_CUSTOMER_PROF_201803.dat'
