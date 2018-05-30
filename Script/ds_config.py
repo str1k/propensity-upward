@@ -1,4 +1,4 @@
-date_stamp = '20180530'
+date_stamp = '20180530_2'
 
 arpu_cluster = '/preprocessed_cvm'
 devprod02_cluster = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/NON_VOICE'
@@ -6,14 +6,14 @@ devprod02_cluster = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@nat
 cvm_non_voice_arpu_source = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/NON_VOICE/CVM_ARPU_UPWARD_201804.txt'
 #cvm_non_voice_arpu_source = '/preprocessed_cvm/raw_20180322'
 cvm_non_voice_arpu_delimiter = '|'
-cvm_non_voice_arpu_source_extend = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/NON_VOICE/CVM_ARPU_UPWARD_SAS_201803.txt'
+cvm_non_voice_arpu_source_extend = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/NON_VOICE/CVM_ARPU_UPWARD_SAS_201804.txt'
 
 master_tarif = '/data_cvm/NON_VOICE/master_package_tariff_20180305.txt'
 
-gs_customer_prof_before = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/POSTPAID/GS_SUMMARY_CUSTOMER_PROF_201712.dat'
+gs_customer_prof_before = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/POSTPAID/GS_SUMMARY_CUSTOMER_PROF_201801.dat'
 gs_customer_prof_before_delim = '|'
 
-gs_customer_prof_after = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/POSTPAID/GS_SUMMARY_CUSTOMER_PROF_201803.dat'
+gs_customer_prof_after = 'wasb://ds-cvm-hd-rs-devprod-02-2017-09-25t08-15-40-207z@natds201708cvm1sa01.blob.core.windows.net/data_cvm/POSTPAID/GS_SUMMARY_CUSTOMER_PROF_201804.dat'
 gs_customer_prof_after_delim = '|'
 
 preprocess_01_output_01 = '/preprocessed_cvm/mainset_elim_null_' + date_stamp
